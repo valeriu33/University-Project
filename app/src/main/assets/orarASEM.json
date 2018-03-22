@@ -1,0 +1,134 @@
+{
+  "saptamina":
+  [
+    {
+      "numeZi": "Luni",
+      "idZi": 0,
+      "lectii": [
+        {
+          "idLectie": 0,
+          "nume": "Proiectatra Baze de Date",
+          "tip": "curs",
+          "profesor": "Cotelea V.",
+          "cabinet": "414",
+          "par": ""
+        },
+        {
+          "idLectie": 1,
+          "nume": "Proiectatra Baze de Date",
+          "tip": "lab",
+          "profesor": "Ghetmancenco S.",
+          "cabinet": "et. 2",
+          "par": ""
+        },
+        {
+          "idLectie": 2,
+          "nume": "Programarea app. Windows",
+          "tip": "lab",
+          "profesor": "Toaca Z.",
+          "cabinet": "et. 2",
+          "par": ""
+        }
+      ]
+    },
+
+    {
+      "numeZi": "Marti",
+      "idZi": 1,
+      "lectii": [
+        {
+          "idLectie": 0,
+          "nume": "Cerc operationale II",
+          "tip": "curs",
+          "profesor": "Braila A.",
+          "cabinet": "413",
+          "par": ""
+        },
+        {
+          "idLectie": 1,
+          "nume": "Cerc operationale II",
+          "tip": "lab",
+          "profesor": "Braila A.",
+          "cabinet": "et. 2",
+          "par": ""
+        },
+        {
+          "idLectie": 2,
+          "nume": "Programarea app. Windows",
+          "tip": "curs",
+          "profesor": "Coanda I.",
+          "cabinet": "406",
+          "par": "imp"
+        }
+      ]
+    },
+
+    {
+      "numeZi": "Miercuri",
+      "idZi": 2,
+      "lectii": [
+        {
+          "idLectie": 1,
+          "nume": "Proiectatra sistemelor inf.",
+          "tip": "curs",
+          "profesor": "Zacon T.",
+          "cabinet": "411",
+          "par": ""
+        },
+        {
+          "idLectie": 2,
+          "nume": "Cercetarii operationale",
+          "tip": "practica",
+          "profesor": "Braila A.",
+          "cabinet": "406",
+          "par": "par"
+        },
+        {
+          "idLectie": 3,
+          "nume": "Proiectarea sistemelor inf.",
+          "tip": "lab",
+          "profesor": "Zacon T.",
+          "cabinet": "et. 2",
+          "par": ""
+        }
+      ]
+    },
+
+    {
+      "numeZi": "Joi",
+      "idZi": 3,
+      "lectii": []
+    },
+
+    {
+      "numeZi": "Vineri",
+      "idZi": 4,
+      "lectii": [
+        {
+          "idLectie": 0,
+          "nume": "Management",
+          "tip": "curs",
+          "profesor": "Serduni S.",
+          "cabinet": "et 2.",
+          "par": ""
+        },
+        {
+          "idLectie": 1,
+          "nume": "Programarea App Windows",
+          "tip": "lab",
+          "profesor": "Toaca Z.",
+          "cabinet": "et. 2",
+          "par": "imp"
+        },
+        {
+          "idLectie": 2,
+          "nume": "Management",
+          "tip": "curs",
+          "profesor": "Ustica",
+          "cabinet": "706 A",
+          "par": ""
+        }
+      ]
+    }
+  ]
+}
