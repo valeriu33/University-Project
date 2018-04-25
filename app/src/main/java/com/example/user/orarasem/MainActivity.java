@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
@@ -132,9 +133,61 @@ public class MainActivity extends AppCompatActivity {
             TextView tipText = (TextView) convertView.findViewById(R.id.tip);
             TextView cabinetText = (TextView) convertView.findViewById(R.id.nrCabinet);
 
+            LinearLayout ziTotalLayout = (LinearLayout) convertView.findViewById(R.id.sumarZi);
+            TextView lectie1 = (TextView) convertView.findViewById(R.id.lectie1);
+            TextView lectie2 = (TextView) convertView.findViewById(R.id.lectie2);
+            TextView lectie3 = (TextView) convertView.findViewById(R.id.lectie3);
+            TextView lectie4 = (TextView) convertView.findViewById(R.id.lectie4);
+            TextView numeSaptanima = (TextView) convertView.findViewById(R.id.numeSaptamina);
 
+            if (position %4 != 0)
+            {
+                ziTotalLayout.setVisibility(LinearLayout.GONE);
+                //            ziTotalLayout.setVisibility(LinearLayout.GONE);
+            }
+            else {
+                ziTotalLayout.setVisibility(LinearLayout.VISIBLE);
+                numeSaptanima.setText(zile[position / 4].nume);
+                try {
+//                    lectie1.setVisibility(TextView.VISIBLE);
+                    lectie1.setText(zile[position / 4].lectii[position % 4].nume);
+                } catch (Exception e) {
+//                    lectie1.setVisibility(TextView.GONE);
+                    lectie1.setText("");
+                }
+                try {
+//                    lectie2.setVisibility(TextView.VISIBLE);
+                    lectie2.setText(zile[position / 4].lectii[position % 4 + 1].nume);
+                } catch (Exception e) {
+//                    lectie2.setVisibility(TextView.GONE);
+                    lectie2.setText("");
+                }
+                try {
+//                    lectie3.setVisibility(TextView.VISIBLE);
+                    lectie3.setText(zile[position / 4].lectii[position % 4 + 2].nume);
+                } catch (Exception e) {
+//                    lectie3.setVisibility(TextView.GONE);
+                    lectie3.setText("");
+                }
+                try {
+//                    lectie4.setVisibility(TextView.VISIBLE);
+                    lectie4.setText(zile[position / 4].lectii[position % 4 + 3].nume);
+                } catch (Exception e) {
+//                    lectie4.setVisibility(TextView.GONE);
+                    lectie4.setText("");
+                }
+            }
+
+            ziSaptaminaText.setVisibility(TextView.VISIBLE);
             ziSaptaminaText.setText(zile[position/4].nume);
             try {
+
+                numeText.setVisibility(TextView.VISIBLE);
+                oraText.setVisibility(TextView.VISIBLE);
+                profesorText.setVisibility(TextView.VISIBLE);
+                tipText.setVisibility(TextView.VISIBLE);
+                cabinetText.setVisibility(TextView.VISIBLE);
+
                 numeText.setText(zile[position/4].lectii[position%4].nume);
                 oraText.setText(Zi.ore[position%4]);
                 profesorText.setText(zile[position/4].lectii[position%4].profesor);
@@ -143,11 +196,21 @@ public class MainActivity extends AppCompatActivity {
             }
             catch (Exception e)
             {
-                numeText.setText("Fereasra");
-                oraText.setText(Zi.ore[position%4]);
-                profesorText.setText("");
-                tipText.setText("");
-                cabinetText.setText("");
+                if(position % 4 == 3)
+                {
+                    ziSaptaminaText.setVisibility(TextView.GONE);
+                    numeText.setVisibility(TextView.GONE);
+                    oraText.setVisibility(TextView.GONE);
+                    profesorText.setVisibility(TextView.GONE);
+                    tipText.setVisibility(TextView.GONE);
+                    cabinetText.setVisibility(TextView.GONE);
+                }else {
+                    numeText.setText("Fereasra");
+                    oraText.setText(Zi.ore[position % 4]);
+                    profesorText.setText("");
+                    tipText.setText("");
+                    cabinetText.setText("");
+                }
             }
 
 

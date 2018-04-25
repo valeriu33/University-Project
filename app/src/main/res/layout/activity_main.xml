@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
     tools:context="com.example.user.orarasem.MainActivity">
 
     <ListView
         android:id="@+id/ziList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/zi_content" />
 
 </LinearLayout>
