@@ -4,14 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0465a1"
-    android:orientation="vertical"
-    tools:context="com.example.user.orarasem.MainActivity">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ProfesoriActivity"
+    tools:showIn="@layout/app_bar_profesori">
 
-    <ListView
-        android:id="@+id/ziList"
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/zi_content" />
-
+        android:layout_height="match_parent" />
 </LinearLayout>

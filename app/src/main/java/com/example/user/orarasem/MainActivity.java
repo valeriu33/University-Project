@@ -24,6 +24,8 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Calendar;
+import java.util.Date;
 
 import static android.view.View.inflate;
 
@@ -45,11 +47,32 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setAdapter(customAdapter);
 
-//        listView.setSelection(15);
-        }
+        int currentTime = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
 
-    public Zi[] getZiArray()
-    {
+        listView.setSelection(15);
+
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+        calendar.get(Calendar.HOUR);
+        switch (day) {
+            case Calendar.SUNDAY:
+                // Current day is Sunday
+
+            case Calendar.MONDAY:
+                // Current day is Monday
+
+            case Calendar.TUESDAY:
+                // etc.
+        }
+    }
+
+
+    public int getLessonNumber(Calendar calendar) {
+        //        if(calendar.get(Calendar.HOUR) == 8) || (calendar.get(Calendar.HOUR) == 9 && calendar.get(Calendar.))
+        return 0;
+    }
+
+    public Zi[] getZiArray() {
         Zi[] zile = new Zi[5];
 
         String json = null;
@@ -73,20 +96,20 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject zi_jObject = saptamina_jArray.getJSONObject(i);
                 Zi zi = new Zi();
 
-                zi.id = (int)zi_jObject.get("idZi");
-                zi.nume = (String)zi_jObject.get("numeZi");
+                zi.id = (int) zi_jObject.get("idZi");
+                zi.nume = (String) zi_jObject.get("numeZi");
 
                 JSONArray lectii_jArray = zi_jObject.getJSONArray("lectii");
                 for (int j = 0; j < lectii_jArray.length(); j++) {
                     JSONObject lectie_jObect = lectii_jArray.getJSONObject(j);
                     Lectie lectie = new Lectie();
 
-                    lectie.id = (int)lectie_jObect.get("idLectie");
-                    lectie.nume = (String)lectie_jObect.get("nume");
-                    lectie.tip = (String)lectie_jObect.get("tip");
-                    lectie.profesor = (String)lectie_jObect.get("profesor");
-                    lectie.cabinet = (String)lectie_jObect.get("cabinet");
-                    lectie.par = (String)lectie_jObect.get("par");
+                    lectie.id = (int) lectie_jObect.get("idLectie");
+                    lectie.nume = (String) lectie_jObect.get("nume");
+                    lectie.tip = (String) lectie_jObect.get("tip");
+                    lectie.profesor = (String) lectie_jObect.get("profesor");
+                    lectie.cabinet = (String) lectie_jObect.get("cabinet");
+                    lectie.par = (String) lectie_jObect.get("par");
 
                     zi.lectii[lectie.id] = lectie;
                 }
@@ -98,12 +121,11 @@ public class MainActivity extends AppCompatActivity {
         return zile;
     }
 
-    class CustomAdapter extends BaseAdapter
-    {
+    class CustomAdapter extends BaseAdapter {
 
         @Override
         public int getCount() {
-            return 4*5;
+            return 4 * 5;
         }
 
         @Override
@@ -123,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
 //            convertView = getLayoutInflater().inflate(R.layout.zi_content, null);
 
             if (convertView == null) {
-                convertView = getLayoutInflater().inflate(R.layout.zi_content, parent,false);
+                convertView = getLayoutInflater().inflate(R.layout.zi_content, parent, false);
             }
 
             TextView ziSaptaminaText = (TextView) convertView.findViewById(R.id.ziSaptamina);
@@ -140,12 +162,10 @@ public class MainActivity extends AppCompatActivity {
             TextView lectie4 = (TextView) convertView.findViewById(R.id.lectie4);
             TextView numeSaptanima = (TextView) convertView.findViewById(R.id.numeSaptamina);
 
-            if (position %4 != 0)
-            {
+            if (position % 4 != 0) {
                 ziTotalLayout.setVisibility(LinearLayout.GONE);
                 //            ziTotalLayout.setVisibility(LinearLayout.GONE);
-            }
-            else {
+            } else {
                 ziTotalLayout.setVisibility(LinearLayout.VISIBLE);
                 numeSaptanima.setText(zile[position / 4].nume);
                 try {
@@ -179,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             ziSaptaminaText.setVisibility(TextView.VISIBLE);
-            ziSaptaminaText.setText(zile[position/4].nume);
+            ziSaptaminaText.setText(zile[position / 4].nume);
             try {
 
                 numeText.setVisibility(TextView.VISIBLE);
@@ -188,23 +208,20 @@ public class MainActivity extends AppCompatActivity {
                 tipText.setVisibility(TextView.VISIBLE);
                 cabinetText.setVisibility(TextView.VISIBLE);
 
-                numeText.setText(zile[position/4].lectii[position%4].nume);
-                oraText.setText(Zi.ore[position%4]);
-                profesorText.setText(zile[position/4].lectii[position%4].profesor);
-                tipText.setText(zile[position/4].lectii[position%4].tip);
-                cabinetText.setText(zile[position/4].lectii[position%4].cabinet);
-            }
-            catch (Exception e)
-            {
-                if(position % 4 == 3)
-                {
+                numeText.setText(zile[position / 4].lectii[position % 4].nume);
+                oraText.setText(Zi.ore[position % 4]);
+                profesorText.setText(zile[position / 4].lectii[position % 4].profesor);
+                tipText.setText(zile[position / 4].lectii[position % 4].tip);
+                cabinetText.setText(zile[position / 4].lectii[position % 4].cabinet);
+            } catch (Exception e) {
+                if (position % 4 == 3) {
                     ziSaptaminaText.setVisibility(TextView.GONE);
                     numeText.setVisibility(TextView.GONE);
                     oraText.setVisibility(TextView.GONE);
                     profesorText.setVisibility(TextView.GONE);
                     tipText.setVisibility(TextView.GONE);
                     cabinetText.setVisibility(TextView.GONE);
-                }else {
+                } else {
                     numeText.setText("Fereasra");
                     oraText.setText(Zi.ore[position % 4]);
                     profesorText.setText("");

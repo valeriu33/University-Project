@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/OrarASEM.iml" filepath="$PROJECT_DIR$/OrarASEM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/University-Project.iml" filepath="$PROJECT_DIR$/University-Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

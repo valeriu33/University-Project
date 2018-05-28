@@ -19,6 +19,7 @@ public class ListViewWidgetService extends RemoteViewsService {
 
     @Override
     public RemoteViewsFactory onGetViewFactory(Intent intent) {
+        Zi.putJSONinSP(this.getApplicationContext());
         return new AppWidgetListView(this.getApplicationContext(), Zi.getDataFromSP(getApplicationContext()));
     }
 }

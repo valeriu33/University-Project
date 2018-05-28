@@ -18,6 +18,8 @@ import android.widget.RemoteViews;
 
         appWidgetManager.updateAppWidget(appWidgetId, remoteView);
 
+
+
 //        // Construct the RemoteViews object
 //        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.schedule_widget);
 
