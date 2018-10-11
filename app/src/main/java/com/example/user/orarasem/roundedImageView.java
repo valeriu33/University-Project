@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-public class roundedImageView extends ImageView {
+public class roundedImageView extends android.support.v7.widget.AppCompatImageView {
 
 
     private float radius = 18.0f;
@@ -28,14 +28,14 @@ public class roundedImageView extends ImageView {
     }
 
     public roundedImageView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
+        super(context,attrs,defStyleAttr);
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        rect = new RectF(0, 0, this.getWidth(), this.getHeight());
-        path.addRoundRect(rect, radius, radius, Path.Direction.CW);
-        canvas.clipPath(path);
-        super.onDraw(canvas);
-    }
+//    @Override
+//    protected void onDraw(Canvas canvas) {
+//        rect = new RectF(0, 0, this.getWidth(), this.getHeight());
+//        path.addRoundRect(rect, radius, radius, Path.Direction.CW);
+//        canvas.clipPath(path);
+//        super.onDraw(canvas);
+//    }
 }

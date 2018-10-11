@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_schedule"
+            android:icon="@drawable/ic_schedule_black_24dp"
+            android:title="Orar" />
+        <item
+            android:id="@+id/nav_teachers"
+            android:icon="@drawable/ic_people_black_24dp"
+            android:title="Profesori" />
+        <item
+            android:id="@+id/nav_exams"
+            android:icon="@drawable/ic_border_color_black_24dp"
+            android:title="Examene" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Setari" />
+    </group>
+
+</menu>
